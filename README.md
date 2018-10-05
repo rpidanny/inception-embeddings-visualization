@@ -9,9 +9,18 @@ A script to generate tensorboard embeddings visualization of a group of images.
 * tensorflow
 * tensorboard
 
+## Installation
+
+`pip install -r requierments.txt`
+
 ## Usage
 
-* `pip install -r requierments.txt`
-* `python main.py --image_dir=path_to_image_dir`
-* `tensorboard --logdir=/tmp/tensorboard_logs --port=9001`
-* Go to `http://localhost:9001`
+### Generate embeddings
+
+`python main.py --image_dir=path_to_image_dir`
+
+### Load the embeddings on Tensorboard
+
+`tensorboard --logdir=/tmp/tensorboard_logs --port=9001`
+
+Go to [http://localhost:9001](http://localhost:9001)
