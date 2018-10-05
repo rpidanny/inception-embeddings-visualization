@@ -39,7 +39,7 @@ def main(_): #pylint: disable-msg=too-many-statements
   image_data = []
   for image in images:
     data = cv2.imread(image)
-    data = cv2.resize(data, (224, 224))
+    data = cv2.resize(data, (100, 100))
     image_data.append(data)
     metadata_file.write('{}\n'.format(os.path.basename(image)))
   metadata_file.close()
