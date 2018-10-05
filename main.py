@@ -33,12 +33,16 @@ def main(_): #pylint: disable-msg=too-many-statements
       create_inception_graph(FLAGS.model_dir))
   images = get_image_lists(FLAGS.image_dir)
 
-  # create image sprite
+  # create image sprite and metadata file
+  metadata_file = open(os.path.join(FLAGS.summaries_dir, 'metadata.tsv'), 'w')
+  # metadata_file.write('Name\n')
   image_data = []
   for image in images:
     data = cv2.imread(image)
     data = cv2.resize(data, (224, 224))
     image_data.append(data)
+    metadata_file.write('{}\n'.format(os.path.basename(image)))
+  metadata_file.close()
   image_data = np.array(image_data)
   sprite = images_to_sprite(image_data)
   cv2.imwrite(os.path.join(FLAGS.summaries_dir, 'images_sprite.png'), sprite)
@@ -57,7 +61,7 @@ def main(_): #pylint: disable-msg=too-many-statements
     # One can add multiple embeddings.
     embedding = config.embeddings.add()
     embedding.tensor_name = features.name
-    # Comment out if you don't want sprites
+    embedding.metadata_path = os.path.join(FLAGS.summaries_dir, 'metadata.tsv')
     embedding.sprite.image_path = os.path.join(FLAGS.summaries_dir, 'images_sprite.png')
     embedding.sprite.single_image_dim.extend([image_data.shape[1], image_data.shape[1]])
     # Saves a config file that TensorBoard will read during startup.
