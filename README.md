@@ -1,6 +1,6 @@
 # Inception Embeddings Visualization
 
-![alt text](screen.png)
+![alt text](https://github.com/rpidanny/assets/raw/master/inception-embeddings-visualization/screen.gif)
 
 A script to generate tensorboard embeddings visualization of a group of images.
 
