@@ -109,7 +109,7 @@ def get_image_lists(image_dir):
     else:
       print("Invalid Jpeg : Deleting image from trait..")
       tf.gfile.Remove(file_name)
-  print('Fount {} images'.format(len(images)))
+  print('Found {} images'.format(len(images)))
   return images
 
 def get_image_list_embeddings(image_lists, sess, jpeg_data_tensor, bottleneck_tensor):
