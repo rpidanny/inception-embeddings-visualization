@@ -15,11 +15,11 @@ A script to generate tensorboard embeddings visualization of a group of images.
 
 ## Usage
 
-### Generate embeddings
+### Generate Embeddings
 
 `python main.py --image_dir=path_to_image_dir`
 
-### Load the embeddings on Tensorboard
+### Load Embeddings on Tensorboard
 
 `tensorboard --logdir=/tmp/tensorboard_logs --port=9001`
 
