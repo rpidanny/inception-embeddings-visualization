@@ -115,7 +115,7 @@ def get_image_lists(image_dir):
 def get_image_list_embeddings(image_lists, sess, jpeg_data_tensor, bottleneck_tensor):
   print('Getting embeddings')
   embeddings = []
-  for image_path in image_lists:
+  for idx, image_path in enumerate(image_lists):
     if not gfile.Exists(image_path):
       tf.logging.fatal('File does not exist %s', image_path)
       continue
@@ -126,6 +126,9 @@ def get_image_list_embeddings(image_lists, sess, jpeg_data_tensor, bottleneck_te
     # bottleneck_string = ','.join(str(x) for x in bottleneck_values)
     # with open(bottleneck_path, 'w') as bottleneck_file:
     #   bottleneck_file.write(bottleneck_string)
+    sys.stdout.write('\r')
+    sys.stdout.write('{:.2f}% complete'.format((idx/len(image_lists)) * 100))
+    sys.stdout.flush()
   embeddings = np.array(embeddings)
   print ("feature_vectors_shape:", embeddings.shape) 
   print ("num of images:", embeddings.shape[0])
