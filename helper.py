@@ -126,13 +126,14 @@ def get_image_list_embeddings(image_lists, sess, jpeg_data_tensor, bottleneck_te
     # bottleneck_string = ','.join(str(x) for x in bottleneck_values)
     # with open(bottleneck_path, 'w') as bottleneck_file:
     #   bottleneck_file.write(bottleneck_string)
-    sys.stdout.write('\r')
-    sys.stdout.write('{:.2f}% complete'.format((idx/len(image_lists)) * 100))
+    sys.stdout.write('\r{:.2f}% complete'.format((idx/len(image_lists)) * 100))
     sys.stdout.flush()
   embeddings = np.array(embeddings)
-  print ("feature_vectors_shape:", embeddings.shape) 
-  print ("num of images:", embeddings.shape[0])
-  print ("size of individual feature vector:", embeddings.shape[1])
+  sys.stdout.write('\r{:.2f}% complete'.format(100.00))
+  sys.stdout.flush()
+  print ("\nFeature vectors shape:", embeddings.shape) 
+  print ("Num of images:", embeddings.shape[0])
+  print ("Size of individual feature vector:", embeddings.shape[1])
   return tf.Variable(embeddings, name='features')
 
 def images_to_sprite(data):
