@@ -6,6 +6,7 @@ A script to generate tensorboard embeddings visualization of a group of images.
 
 ## Requirements
 
+* python
 * tensorflow
 * tensorboard
 
