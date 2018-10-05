@@ -1,4 +1,4 @@
-# Image Cluster Visualization
+# Inception Embeddings Visualization
 
 A script to generate tensorboard embeddings visualization of a group of images.
 
