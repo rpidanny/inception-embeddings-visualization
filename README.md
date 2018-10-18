@@ -26,7 +26,7 @@ A script to generate tensorboard embeddings visualization of a group of images.
 
 Change directory to your project directory, than run in the interactive mode:
 
-`nvidia-docker run -it -p 9001:9001 -v=$(pwd):$(pwd) --workdir=$(pwd) --rm abhishek/tf1.8-gpu`
+`nvidia-docker run -it -p 9001:9001 -v=$(pwd):$(pwd) --workdir=$(pwd) --rm rpidanny/tf1.8-gpu`
 
 ## Usage
 
