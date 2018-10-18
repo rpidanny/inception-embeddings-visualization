@@ -28,7 +28,7 @@ Replace `tf1.8-gpu` with `tf1.8` for CPU build.
 
 Change directory to your project directory, than run in the interactive mode:
 
-`nvidia-docker run -it -p 9001:9001 -v=$(pwd):$(pwd) --workdir=$(pwd) --rm rpidanny/tf1.8-gpu`
+`nvidia-docker run -it -p 9001:9001 -v=$(pwd):$(pwd) -v={path_to_image_dir}:/data--workdir=$(pwd) --rm rpidanny/tf1.8-gpu`
 
 ## Usage
 
