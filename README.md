@@ -34,6 +34,8 @@ Change directory to your project directory, than run in the interactive mode:
 
 ### Generate Embeddings
 
+Use `python3` while using docker.
+
 `python main.py --image_dir=path_to_image_dir`
 
 ### Load Embeddings on Tensorboard
