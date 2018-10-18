@@ -18,7 +18,7 @@ A script to generate tensorboard embeddings visualization of a group of images.
 
 ### Docker
 
-Replace `tf1.8-gpu` with `tf1.8` for CPU build.
+Replace `tf1.8-gpu` with `tf1.8` and `nvidia-docker` with `docker` for CPU build.
 
 #### Pull image
 
