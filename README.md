@@ -12,7 +12,21 @@ A script to generate tensorboard embeddings visualization of a group of images.
 
 ## Installation
 
+## Local
+
 `pip install -r requierments.txt`
+
+## Docker
+
+### Pull image
+
+`docker pull rpidanny/tf1.8-gpu`
+
+### Run Container
+
+Change directory to your project directory, than run in the interactive mode:
+
+`nvidia-docker run -it -p 9001:9001 -v=$(pwd):$(pwd) --workdir=$(pwd) --rm abhishek/tf1.8-gpu`
 
 ## Usage
 
